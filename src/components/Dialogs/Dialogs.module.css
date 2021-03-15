@@ -1,0 +1,25 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dialogs_items {
+  grid-column: 1/2;
+}
+
+.messages {
+  grid-column: 2/3;
+}
+
+.superactive {
+  color: gold;
+}
+
+.dialogs_items a {
+  display: block;
+  text-decoration: none;
+}
+
+.btn {
+  display: block;
+}

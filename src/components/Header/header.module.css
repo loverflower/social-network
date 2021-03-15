@@ -1,0 +1,18 @@
+.header {
+  grid-area: h;
+  background-color: green;
+}
+.header img {
+  width: 20px;
+}
+
+.log {
+  color: white;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.btn {
+  display: inline-block;
+  float: right;
+}

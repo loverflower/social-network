@@ -1,0 +1,13 @@
+.areabox {
+  border: 3px red solid;
+  display: inline-block;
+}
+
+.errorSpan {
+  color: white;
+  font-size: 15px;
+  background-color: orangered;
+}
+.red {
+  color: red;
+}

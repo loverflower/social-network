@@ -1,0 +1,29 @@
+.box {
+  background-color: violet;
+  padding: 20px 0;
+}
+
+.boxfriend {
+  color: white;
+  display: block;
+
+  font-size: 20px;
+}
+
+.photos {
+  width: auto;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.post {
+  font-size: 30px;
+}
+
+.active {
+  font-weight: 700;
+}
+
+span {
+  cursor: pointer;
+}
