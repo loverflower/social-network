@@ -1,6 +1,7 @@
 .box {
   background-color: violet;
   padding: 20px 0;
+  box-sizing: border-box;
 }
 
 .boxfriend {
@@ -24,6 +25,11 @@
   font-weight: 700;
 }
 
-span {
+.pages {
+  color: white;
   cursor: pointer;
+  border: 1px solid;
+  border-color: white;
+  display: inline-block;
+  box-sizing: border-box;
 }

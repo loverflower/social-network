@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Users.module.css";
 import assepts from "./../../components/images/assepts.png";
 import { NavLink } from "react-router-dom";
@@ -10,21 +10,44 @@ const Users = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     mass.push(i);
   }
+  const totalPageIn = 20;
+  let [portion, handlePortion] = useState(1);
+  const portionStart = (portion - 1) * totalPageIn + 1;
+  const portionEnd = portion * totalPageIn;
+  const numberLatestportion = Math.ceil(props.totalUserCount / totalPageIn);
 
+  const nextPortion = function () {
+    handlePortion(portion + 1);
+  };
+
+  const prevPortion = function () {
+    handlePortion(portion - 1);
+  };
   return (
     <div>
-      {mass.map((u) => {
-        return (
-          <span
-            onClick={() => {
-              props.setCurrentPage(u);
-            }}
-            className={props.currentPage === u && s.active}
-          >
-            {u}
-          </span>
-        );
-      })}
+      {portion === 1 ? "" : <button onClick={prevPortion}>Prev</button>}
+
+      {mass
+        .filter((u) => {
+          return u >= portionStart && u <= portionEnd;
+        })
+        .map((u) => {
+          return (
+            <span
+              onClick={() => {
+                props.setCurrentPage(u);
+              }}
+              className={(props.currentPage === u && s.active, s.pages)}
+            >
+              {u}
+            </span>
+          );
+        })}
+      {portion === numberLatestportion ? (
+        ""
+      ) : (
+        <button onClick={nextPortion}>Next</button>
+      )}
       {props.users.map((el) => (
         <div className={s.box} key={el.id}>
           <div className={s.boxfriend}>{el.name}</div>
